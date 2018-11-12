@@ -1,0 +1,59 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Metadata": {
+        "AWS::CloudFormation::Designer": {
+            "417eb2c5-c43b-4e18-8435-59e5d0e8ee9e": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 62,
+                    "y": 29
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "fb114e50-4f70-4f71-8038-a1965b368915": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 408,
+                    "y": 16
+                },
+                "z": 0,
+                "embeds": []
+            }
+        }
+    },
+    "Resources": {
+        "nagS3": {
+            "Type": "AWS::S3::Bucket",
+            "Properties": {},
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "fb114e50-4f70-4f71-8038-a1965b368915"
+                }
+            }
+        },
+        "NagEc2Instance": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "SecurityGroups": [
+                    {
+                        "Ref": "InstanceSecurityGroup"
+                    }
+                ],
+                "KeyName": "mykey",
+                "ImageId": ""
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "417eb2c5-c43b-4e18-8435-59e5d0e8ee9e"
+                }
+            }
+        }
+    }
+}
